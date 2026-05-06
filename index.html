@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Arshita Enterprises - CNC Machine Tools</title>
+<meta name="description" content="Arshita Enterprises - High-precision CNC machine tools. Browse inventory and place orders with custom delivery dates." />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#" data-nav="home" class="brand">
+      <span class="brand-title">Arshita Enterprises</span>
+      <span class="brand-sub">CNC Machine Tools</span>
+    </a>
+    <nav class="main-nav">
+      <a href="#" data-nav="home">Home</a>
+      <a href="#" data-nav="order">Order</a>
+      <a href="#" data-nav="admin">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container main-content">
+
+  <!-- HOME -->
+  <section data-page="home" class="page">
+    <div class="hero">
+      <h1>Arshita Enterprises</h1>
+      <h2>CNC Machine Tools</h2>
+      <p>High-precision tooling for industrial machining. Browse our inventory and place your order with a custom delivery date.</p>
+      <button class="btn btn-primary" data-nav="order">Browse &amp; Order Tools</button>
+    </div>
+    <div class="features">
+      <div class="feature-card">
+        <h3>Quality Inventory</h3>
+        <p>Carefully curated CNC tools for every job.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Trusted Supplier</h3>
+        <p>Years of experience supplying precision parts.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Scheduled Delivery</h3>
+        <p>Pick the date that fits your production schedule.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER -->
+  <section data-page="order" class="page hidden">
+    <h1>Place an Order</h1>
+
+    <div class="card">
+      <h2>Your Information</h2>
+      <form id="customer-form" class="form-grid">
+        <label>Name<input type="text" name="name" required /></label>
+        <label>Contact Number<input type="text" name="contact" required /></label>
+        <button type="submit" class="btn btn-primary">Save My Info</button>
+        <p id="customer-saved" class="hint"></p>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Available Tools</h2>
+      <div id="customer-tools-list" class="tools-grid"></div>
+    </div>
+  </section>
+
+  <!-- ADMIN -->
+  <section data-page="admin" class="page hidden">
+    <div id="admin-login" class="card login-card">
+      <h2>Admin Login</h2>
+      <form id="login-form">
+        <label>Password<input type="password" name="password" required /></label>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <p id="login-error" class="error"></p>
+      </form>
+    </div>
+
+    <div id="admin-panel" class="hidden">
+      <div class="admin-header">
+        <h1>Admin Panel</h1>
+        <button id="logout-btn" class="btn btn-ghost">Logout</button>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="tools">Tools</button>
+        <button class="tab-btn" data-tab="orders">Orders</button>
+      </div>
+
+      <div data-tab-panel="tools" class="tab-panel">
+        <div class="card">
+          <h2 id="tool-form-title">Add Tool</h2>
+          <form id="tool-form" class="form-grid">
+            <input type="hidden" name="id" />
+            <label>Name<input type="text" name="name" required /></label>
+            <label>Description<textarea name="description" rows="2"></textarea></label>
+            <label>Quantity<input type="number" name="quantity" min="0" required /></label>
+            <label>Price<input type="number" name="price" min="0" step="0.01" required /></label>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" id="tool-submit-btn">Add Tool</button>
+              <button type="button" id="tool-cancel-btn" class="btn btn-ghost hidden">Cancel</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2>Inventory</h2>
+          <div id="admin-tools-list"></div>
+        </div>
+      </div>
+
+      <div data-tab-panel="orders" class="tab-panel hidden">
+        <div class="card">
+          <h2>Customer Orders</h2>
+          <div id="admin-orders-list"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Arshita Enterprises - CNC Machine Tools</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
