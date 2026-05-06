@@ -206,7 +206,7 @@ function renderAdminTools() {
   const list = tools.list();
   if (list.length === 0) { wrap.innerHTML = '<p class="empty">No tools yet. Add one above.</p>'; return; }
   wrap.innerHTML = `
-    <div class="table-wrap"><table class="list-table">
+    <table class="list-table">
       <thead><tr><th>Name</th><th>Description</th><th>Qty</th><th>Price</th><th>Actions</th></tr></thead>
       <tbody>
         ${list.map(t => `
@@ -222,7 +222,8 @@ function renderAdminTools() {
           </tr>
         `).join("")}
       </tbody>
-    </table></div>`;
+    </table>`;
+  wrap.querySelectorAll("[data-edit-tool]").forEach(btn => {
     btn.addEventListener("click", () => {
       const t = tools.get(btn.dataset.editTool); if (!t) return;
       const f = document.getElementById("tool-form");
@@ -251,7 +252,7 @@ function renderAdminOrders() {
   const list = orders.list().slice().sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
   if (list.length === 0) { wrap.innerHTML = '<p class="empty">No orders yet.</p>'; return; }
   wrap.innerHTML = `
-    <div class="table-wrap"><table class="list-table">
+    <table class="list-table">
       <thead><tr>
         <th>Customer</th><th>Contact</th><th>Tool</th><th>Qty</th><th>Total</th><th>Delivery date</th><th>Status</th><th>Actions</th>
       </tr></thead>
@@ -272,7 +273,7 @@ function renderAdminOrders() {
           </tr>
         `).join("")}
       </tbody>
-    </table></div>`;
+    </table>`;
   wrap.querySelectorAll("[data-deliver]").forEach(btn => {
     btn.addEventListener("click", () => { orders.markDelivered(btn.dataset.deliver); renderAdminOrders(); });
   });
