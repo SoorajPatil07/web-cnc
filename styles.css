@@ -127,8 +127,7 @@ body {
 .order-form-row input { flex: 1; min-width: 80px; padding: 6px 8px; border: 1px solid var(--border); border-radius: 6px; }
 
 /* Tables */
-.table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.list-table { width: 100%; border-collapse: collapse; min-width: 560px; }
+.list-table { width: 100%; border-collapse: collapse; }
 .list-table th, .list-table td {
   text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--border); font-size: 0.92rem;
   vertical-align: top;
@@ -158,32 +157,9 @@ body {
 /* Footer */
 .site-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 20px 0; margin-top: 30px; text-align: center; color: var(--muted); font-size: 0.88rem; }
 
-@media (max-width: 700px) {
-  .container { padding: 0 14px; }
-  .main-content { padding: 18px 0; }
-  .hero { padding: 36px 18px; border-radius: 12px; }
-  .hero h1 { font-size: 1.8rem; }
-  .hero h2 { font-size: 1.1rem; }
-  .hero p { font-size: 0.95rem; }
-  .header-inner { flex-direction: column; align-items: flex-start; gap: 10px; padding: 12px 14px; }
-  .main-nav { display: flex; flex-wrap: wrap; gap: 4px; }
-  .main-nav a { margin: 0 12px 0 0; font-size: 0.9rem; }
-  .card { padding: 16px; border-radius: 8px; }
-  .features { grid-template-columns: 1fr; gap: 12px; }
-  .tools-grid { grid-template-columns: 1fr; }
-  .form-grid { max-width: 100%; }
-  .form-actions { flex-wrap: wrap; }
-  .btn { padding: 10px 14px; }
-  .tabs { overflow-x: auto; flex-wrap: nowrap; }
-  .tab-btn { padding: 10px 12px; white-space: nowrap; }
-  .admin-header { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .login-card { margin: 20px auto; }
-  h1 { font-size: 1.6rem; }
-  h2 { font-size: 1.25rem; }
-}
-
-@media (max-width: 380px) {
-  .hero h1 { font-size: 1.5rem; }
-  .order-form-row { flex-direction: column; }
-  .order-form-row input, .order-form-row .btn { width: 100%; }
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2rem; }
+  .hero h2 { font-size: 1.2rem; }
+  .header-inner { flex-direction: column; gap: 8px; }
+  .main-nav a { margin: 0 8px; }
 }
